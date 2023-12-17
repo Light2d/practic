@@ -1,0 +1,317 @@
+//<цвета>===============================================
+$white: #ffffff;
+$black: #000000;
+$fontFamily: "arial";
+$mainText: #efefef;
+$purple: #6a33ec;
+$bg: #16171b;
+$details: #222327;
+$darkBg: #121216;
+
+//<ПЕРЕМЕННЫЕ>=======================================================
+$maxWidth: 1920px;
+$maxWidthContainer: 1500;
+$md1: 1024.98;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//<АДАПАТИВ КОНТЕЙНЕРА>==============================================
+.container {
+  padding: 0 20px;
+  max-width: $maxWidthContainer + px;
+  margin: 0 auto;
+  @media (max-width: $md1+px) {
+  }
+
+  @media (max-width: $md3+px) {
+    padding: 0 20px;
+  }
+}
+//<импорты>==============================================
+@import "null";
+@import "login";
+@import "register_jury";
+@import "organizator";
+
+html, body {
+    overflow-x: hidden;
+    box-sizing: border-box;
+
+}
+body {
+  background: $white;
+  font-family: 'Rubik', sans-serif;
+  &._lock {
+    overflow: hidden;
+  }
+}
+img{
+  max-width: 100%;
+}
+//<ОБОЛОЧКА>==============================================
+.wrapper {
+  min-height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+//==================HEADER======================
+body{
+  background: $bg;
+
+}
+.header {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 300px;
+  z-index: 100;
+  background: $bg;
+  // .header__items
+  &__items {
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: all .2s ease;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    &:hover{
+      background: $darkBg;
+      transition: all .2s ease;
+    }
+    & a{
+      color: $mainText;
+    }
+  }
+  // .header__item
+  &__item {
+    position: relative;
+  }
+  &__fav{
+    width: 27px;
+  }
+  &__profile{
+    width: 40px;
+    border-radius: 5px;
+  }
+  &__notification{
+    width: 30px;
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  &__dropdown {
+    display: none;
+    position: absolute;
+    top: 105%;
+    z-index: 100;
+    right: -50px;
+    background-color: $darkBg; 
+    // box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    width: 200px;
+  }
+  &__dropdown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  &__dropdown li {
+    padding: 15px 10px;
+    &:not(:last-child){
+      border-bottom: 1px solid #2e2e2e83;
+    }
+
+  }
+  &__dropdown a {
+    text-decoration: none;
+    color: $mainText; 
+    display: block;
+    &:hover{
+      color: #868686;
+    }
+  }
+
+}
+
+.btn{
+  color: #fff;
+  background: $purple;
+  height: 40px;
+  border-radius: 5px;
+  font-size: 16px;
+  padding: 10px 15px;
+}
+.dropdown{
+  
+  &__item{
+    display: flex;
+    align-items: flex-start;
+    & img{
+      width: 18px;
+    }
+  }
+}
+.header__item:hover .header__dropdown,
+.header__item .header__profile-link:hover + .header__dropdown,
+.header__dropdown:hover {
+    display: block;
+}
+
+//=============================ACCORDERON
+.tabs {
+  position: relative;
+  margin: 3rem 0;
+}
+.tabs::before,
+.tabs::after {
+  content: "";
+  display: table;
+}
+.tabs::after {
+  clear: both;
+}
+.tab {
+  float: left;
+}
+.tab-switch {
+  display: none;
+}
+.tab-label {
+  position: relative;
+  display: block;
+  line-height: 2.75em;
+  height: 3em;
+  padding: 0 1.618em;
+  background: $bg;
+  color: #fff;
+  cursor: pointer;
+  top: 0;
+  transition: all 0.25s;
+}
+.tab-label:hover {
+  top: -0.25rem;
+  transition: top 0.25s;
+}
+.tab-content {
+  position: absolute;
+  z-index: 1;
+  top: 3.5em;
+  left: 0;
+  padding: 1.618rem;
+  color: #2c3e50;
+  opacity: 0;
+  transition: all 0.35s;
+  border-radius: 10px;
+  background: $details;
+  color: $white;
+}
+.tab-switch:checked + .tab-label {
+  background: #222327;
+  border-bottom: 0;
+  transition: all 0.35s;
+  z-index: 1;
+  top: -0.0625rem;
+  border-radius: 10px;
+}
+.tab-switch:checked + label + .tab-content {
+  z-index: 2;
+  opacity: 1;
+  transition: all 0.35s;
+}
+.textarea{
+  background: #222327;
+}
+
+//==========profile
+.profile {
+  background:$bg;
+  // .profile__card
+  &__card {
+    text-align: center;
+    margin-top: 150px;
+    border-radius: 10px;
+    padding: 30px 20px;
+    background: #222327;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: $mainText;
+  }
+  // .profile__img
+  &__img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin: -90px;
+    margin-bottom: 20px;
+  }
+  &__mail {
+    margin-bottom: 10px;
+  }
+  // .profile__name
+  &__name {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  // .profile__num
+  &__num {
+    margin-bottom: 10px;
+  }
+  // .profile__type
+  &__type {
+    margin-bottom: 10px;
+  }
+}
+
+
+//-================index
+.data {
+  padding: 20px;
+  color: $mainText;
+  // .data__items
+  &__items {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+
+  }
+  &__home{
+    margin-bottom: 30px;
+  }
+  // .data__item
+  &__item {
+    flex: 0 0 50%;
+    & select{
+      padding-left: 10px ;
+      height: 40px;
+      width: 20%;
+      color: $mainText;
+      background: #27272a;
+    }
+  }
+  &__inputDate{
+    background-color: $purple;
+    padding: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+}
+
+.userAuth {
+  & btn:not(:last-child){
+    margin-bottom: 20px;
+  }
+}
+#center:not(:last-child){
+  margin-bottom: 30px;
+}

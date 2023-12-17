@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Профиль</title>
+</head>
+<body onload="get_id()">
+
+    <header class="header">
+        <ul class="header__items">
+            <li class="header__item">
+                <a href="">
+                    <img class="header__fav" src="img/header/fav.svg" alt="favourites">
+                </a>
+            </li>
+            <li class="header__item">
+                <a href="">
+                    <img class="header__notification" src="img/header/notif.svg" alt="profile">
+                </a>
+            </li>
+            <li class="header__item">
+                <a href="" class="header__profile-link">
+                    <img class="header__profile" src="img/header/profile.jpg" alt="profile">
+                </a>
+                <div class="header__dropdown dropdown">
+                    <ul>
+                        <li class="dropdown__item">
+                            <a href="profile.html">
+                                <img src="img/login/user.svg" alt="">
+                                <span>Посмотреть профиль</span>
+                            </a>
+                        </li>
+                        <li class="dropdown__item">
+                            <a href="#">
+                                <img src="img/header/off.svg" alt="">
+                                <span>Выйти</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </header>
+
+    <div class="profile">
+        <div class="profile__card">
+            <img src="img/header/profile.jpg" alt="" class="profile__img">
+            <div class="profile__name">Павел Максимыч</div>
+            <div class="profile__mail">yaaasda@gmail.com</div>
+            <div class="profile__num">+7(999)-999-99-99</div>
+            <div class="profile__type">
+                {{type}}
+            </div>
+            {% for card in cards %}
+                {{card | safe}}
+            {% endfor%}
+        </div>
+    </div>
+</body>
+<script src="js/app.js"></script>
+</html>

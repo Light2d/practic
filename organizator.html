@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/organizator.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Организатор</title>
+</head>
+<body>
+     <header class="header">
+        <ul class="header__items">
+            <li class="header__item">
+                <a href="">
+                    <img class="header__fav" src="img/header/fav.svg" alt="favourites">
+                </a>
+            </li>
+            <li class="header__item">
+                <a href="">
+                    <img class="header__notification" src="img/header/notif.svg" alt="profile">
+                </a>
+            </li>
+            <li class="header__item">
+                <a href="" class="header__profile-link">
+                    <img class="header__profile" src="img/header/profile.jpg" alt="profile">
+                </a>
+                <div class="header__dropdown dropdown">
+                    <ul>
+                        <li class="dropdown__item">
+                            <a href="profile.html">
+                                <img src="img/login/user.svg" alt="">
+                                <span>Посмотреть профиль</span>
+                            </a>
+                        </li>
+                        <li class="dropdown__item">
+                            <a href="#">
+                                <img src="img/header/off.svg" alt="">
+                                <span>Выйти</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <div class="organizator">
+        <div class="organizator__text">
+            {{text}}
+        </div>
+        <div class="organizator__name">
+            {{name}}
+        </div>
+        <div class="organizator__btn">
+            <button class="organizator__btn btn">Мероприятие</button>
+            <button class="organizator__btn btn">Участники</button>
+            <button class="organizator__btn btn">Жюри</button>
+            <div>
+                <a href="/"  class="btn btn_back">Назад</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

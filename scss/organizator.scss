@@ -1,0 +1,53 @@
+//<цвета>===============================================
+$white: #ffffff;
+$black: #000000;
+$fontFamily: "arial";
+$mainText: #efefef;
+$purple: #6a33ec;
+$bg: #16171b;
+$details: #222327;
+$darkBg: #121216;
+//<ПЕРЕМЕННЫЕ>=======================================================
+$maxWidth: 1920px;
+$maxWidthContainer: 1300;
+$md1: 1024.98;
+$md2: 991.98;
+$md3: 767.98;
+$md4: 479.98;
+//<логин>=======================================================
+
+.organizator {
+    color: $mainText;
+    background: $details;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 50px;
+    width: 30%;
+    text-align: center;
+    border-radius: 20px;
+    // .organiztor__name
+    &__name {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+     // .organizator__text
+     &__text {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    // .organizator__btn
+    &__btn {
+        display: block;
+        width: 100%;
+        &:not(:last-child){
+            margin-bottom: 15px;
+        }
+        & div{
+            text-align: left;
+            margin-top: 30px;
+        }
+    }
+}
+

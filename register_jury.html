@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/register.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Регистрация</title>
+</head>
+<body onload="get_id()">
+    <div class="register">
+        <div class="register__logo">
+            <img src="img/null.png" alt="" class="">
+        </div>
+        <div class="register__card">
+            <div class="register__title">Регистрация</div>
+            <form class="register__form">
+                <div class="register__inputs">
+                    <div class="register__inputContainer">
+                        <img src="img/login/email.svg" alt="" oncontextmenu="return false;" class="register__img">
+                        <input placeholder="ID-Number" type="text" id="register__id" class="register__id">
+                    </div>
+                    <div class="register__inputContainer">
+                        <img src="img/login/email.svg" alt="" oncontextmenu="return false;" class="register__img">
+                        <input placeholder="Email" type="email" id="email" class="register__email">
+                    </div>
+                    <div class="register__inputContainer">
+                        <img src="img/login/user.svg" alt="" oncontextmenu="return false;" class="register__img">
+                        <input placeholder="ФИО" type="text" class="register__name">
+                    </div>
+                    <div class="register__inputContainer">
+                        <img src="img/login/user.svg" alt="" oncontextmenu="return false;" class="register__img">
+                        <input placeholder="Номер телефона" maxlength="18" oninput="formatAndDisplay()" type="text" class="register__num">
+                    </div>
+                    <div class="register__inputContainer">
+                        <img src="img/login/shcool.svg" alt="" oncontextmenu="return false;" class="register__img">
+                        <select class="register__gender" placeholder="Пол">
+                            <option value="" selected disabled hidden>Пол</option>
+                            <option value="option1">Мужской</option>
+                            <option value="option2">Женский</option>
+                            <option value="option2">Транс</option>
+                            <option value="option2">Еще не определился</option>
+                        </select>
+                    </div>
+                    <div class="register__inputContainer">
+                        <img src="img/login/shcool.svg" alt="" oncontextmenu="return false;" class="register__img">
+                        <select class="register__role" placeholder="Учебное заведение">
+                            <option value="" selected disabled hidden>Роль</option>
+                            <option value="option1">Жюри</option>
+                            <option value="option2"> Участник</option>
+                        </select>
+                    </div>
+                    <div class="register__inputContainer">
+                        <img src="img/login/user.svg" alt="" oncontextmenu="return false;" class="register__img">
+                        <input placeholder="Направление" type="text" class="register__direction">
+                    </div>
+                    <div class="register__inputContainer">
+                        <img src="img/login/user.svg" alt="" oncontextmenu="return false;" class="register__img">
+                        <input placeholder="Мероприятие" type="text" class="register__event">
+                    </div>
+                    <div class="register__inputContainer">
+                        <img src="img/login/password.svg" alt="" oncontextmenu="return false;" class="register__img">
+                        <input placeholder="Пароль" type="Password" id="pass1" class="register__password">
+                    </div>
+                    <div class="register__inputContainer">
+                        <img src="img/login/password.svg" alt="" oncontextmenu="return false;" class="register__img">
+                        <input placeholder="Повторите пароль" id="pass2" onblur="check_post()" type="Password" class="register__password">
+                    </div>
+                </div>
+                <div class="register__description">
+                    Создавая аккаунт, вы соглашаетесь с нашей политикой конфидециальности
+                </div>
+                <div class="register__btn">
+                    <button>Создать аккаунт</button>
+                </div>
+                <div class="register__signup">
+                    <a href="login.html">Войдите</a> если у вас уже есть аккаунт.
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
